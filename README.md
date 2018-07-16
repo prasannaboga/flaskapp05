@@ -4,6 +4,12 @@
 virtualenv -p /usr/bin/python3.6 venv
 ```
 
+##### Setup environment
+```commandline
+cp .env.sample .env
+```
+Enter respective values for environment variables
+
 ##### Install Requirements
 ```commandline
 pip install -r requirements.txt
