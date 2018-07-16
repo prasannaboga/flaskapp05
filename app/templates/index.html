@@ -1,0 +1,12 @@
+<h1>Flask App 05</h1>
+<hr>
+<table class="table application-config-list">
+    <tbody>
+    {% for key, value in config.items()|sort %}
+    <tr>
+        <td>{{key}}</td>
+        <td> {{value}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
