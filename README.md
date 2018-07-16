@@ -1,3 +1,19 @@
+##### Create Virtual Environment
+
+```commandline
+virtualenv -p /usr/bin/python3.6 venv
+```
+
+##### Install Requirements
+```commandline
+pip install -r requirements.txt
+```
+
+##### Freeze Requirements
+```commandline
+pip freeze > requirements.txt
+```
+
 
 
 ___
