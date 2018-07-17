@@ -4,6 +4,6 @@ from flask import Blueprint, render_template
 pages = Blueprint('pages', __name__, url_prefix='', template_folder='templates')
 
 
-@pages.route('/', methods=['GET'])
+@pages.route('/')
 def index():
     return render_template('index.html', config=app.config)
