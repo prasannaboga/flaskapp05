@@ -1,5 +1,6 @@
 from flask import Flask
 from app.pages.views import pages
+from app.api import api_bp
 
 
 def create_app(test_config=None):
@@ -12,5 +13,6 @@ def create_app(test_config=None):
         app.config.from_mapping(test_config)
 
     app.register_blueprint(pages)
+    app.register_blueprint(api_bp, url_prefix='/api')
 
     return app
