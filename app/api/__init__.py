@@ -8,6 +8,6 @@ api = Api(api_bp)
 api.add_resource(ConfigResource, '/config')
 
 
-@api_bp.route('/')
+@api_bp.route('')
 def index():
     return jsonify({'status': 'ok'})

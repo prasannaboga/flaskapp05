@@ -30,5 +30,6 @@ https://simpleit.rocks/managing-environment-configuration-variables-in-flask-wit
 https://damyanon.net/post/flask-series-configuration/
 
 https://github.com/miguelgrinberg/flasky
+https://github.com/achiku/sample-flask-sqlalchemy
 
 https://simpleit.rocks/managing-environment-configuration-variables-in-flask-with-dotenv/
