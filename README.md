@@ -1,3 +1,9 @@
+##### Environment
+```commandline
+python 3.6
+mongoDB
+```
+
 ##### Create Virtual Environment
 
 ```commandline
@@ -20,7 +26,12 @@ pip install -r requirements.txt
 pip freeze > requirements.txt
 ```
 
-
+##### Test
+Execute all test suite
+```commandline
+pytest -s
+```
+Covragte
 
 ___
 Reference Links
