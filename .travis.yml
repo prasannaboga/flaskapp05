@@ -1,10 +1,16 @@
-language: python
+after_success:
+  - codecov
+  - pylint --output-format=text app/
+branches:
+  only:
+    - master
 cache: pip
-python:
-  - 3.6
 install:
   - pip install -r requirements.txt
+  - pip install codecov
+language: python
+python:
+  - 3.6
 script:
-  - pytest -s
-after_success:
-  - pylint app/
+  - coverage erase
+  - coverage run -m pytest && coverage html
