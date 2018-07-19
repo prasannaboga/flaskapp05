@@ -6,3 +6,5 @@ install:
   - pip install -r requirements.txt
 script:
   - pytest -s
+after_success:
+  - pylint app/

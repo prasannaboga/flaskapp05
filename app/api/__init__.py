@@ -2,12 +2,12 @@ from flask import Blueprint, jsonify
 from flask_restful import Api
 from app.api.resources.config_resource import ConfigResource
 
-api_bp = Blueprint('api', __name__)
-api = Api(api_bp)
+API_BP = Blueprint('api', __name__)
+API = Api(API_BP)
 
-api.add_resource(ConfigResource, '/config')
+API.add_resource(ConfigResource, '/config')
 
 
-@api_bp.route('')
+@API_BP.route('')
 def index():
     return jsonify({'status': 'ok'})
