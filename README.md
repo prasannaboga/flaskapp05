@@ -36,11 +36,15 @@ Covragte
 
 ### TODO List
 
-- [] mongoDB connections with authentication
-- [] mongoDB transactions
-- [] Write test cases for models
-- [] https://github.com/hiroaki-yamamoto/mongoengine-goodjson
-- [] https://github.com/marshmallow-code/marshmallow
+-[ ] mongoDB connections with authentication
+
+-[ ] mongoDB transactions
+
+-[ ] Write test cases for models
+
+-[ ] https://github.com/hiroaki-yamamoto/mongoengine-goodjson
+
+-[ ] https://github.com/marshmallow-code/marshmallow
 
 ___
 ### Reference Links
