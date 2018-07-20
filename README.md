@@ -33,8 +33,15 @@ pytest -s
 ```
 Covragte
 
+
+### TODO List
+
+- [] mongoDB connections with authentication
+- [] mongoDB transactions
+- [] Write test cases for models
+
 ___
-Reference Links
+### Reference Links
 
 https://simpleit.rocks/managing-environment-configuration-variables-in-flask-with-dotenv/
 

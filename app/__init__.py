@@ -1,8 +1,11 @@
 """ init file for app """
 
 from flask import Flask
+from flask_mongoengine import MongoEngine
 from app.pages.views import pages
 from app.api import API_BP
+
+db = MongoEngine()
 
 
 def create_app(test_config=None):
@@ -15,6 +18,11 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
+    app.config['MONGODB_SETTINGS'] = {
+        'host': app.config['MONGODB_HOST_URI']
+    }
+
+    db.init_app(app)
     app.register_blueprint(pages)
     app.register_blueprint(API_BP, url_prefix='/api')
 
