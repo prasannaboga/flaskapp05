@@ -1,1 +1,3 @@
-from app.models import book
+from flask_mongoengine import MongoEngine
+
+db = MongoEngine()

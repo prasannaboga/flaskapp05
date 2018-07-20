@@ -11,6 +11,7 @@ load_dotenv(dotenv_path)
 # For mandatory config variables use os.eniron['key']
 
 MONGODB_HOST_URI = os.environ['MONGODB_HOST_URI']
+MONGODB_DATABASE = os.environ['MONGODB_DATABASE']
 SOMETHING = os.getenv('SOMETHING')
 THREE = os.environ['THREE']
 

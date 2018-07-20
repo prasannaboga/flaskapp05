@@ -11,8 +11,8 @@ faker = Faker()
 
 def seed_books_data(db):
     try:
-        for i in range(100):
-            book = Book(title=faker.company(), description=faker.sentence(nb_words=20))
+        for i in range(5):
+            book = Book(title=faker.company(), description=faker.sentence(nb_words=18))
             book.save()
     except Exception as e:
         print('Error while seed books data - {0}'.format(e))

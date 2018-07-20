@@ -1,11 +1,9 @@
 """ init file for app """
 
 from flask import Flask
-from flask_mongoengine import MongoEngine
-from app.pages.views import pages
 from app.api import API_BP
-
-db = MongoEngine()
+from app.models import db
+from app.pages.views import pages
 
 
 def create_app(test_config=None):

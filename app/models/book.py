@@ -1,12 +1,13 @@
 from datetime import datetime
-from mongoengine import StringField, BooleanField
-from app import db
+from app.models import db
+
+import mongoengine_goodjson as gj
 
 
 class Book(db.Document):
     meta = {'collection': 'books'}
-    title = StringField(required=True, max_length=140)
-    description = StringField(max_length=200, default='')
+    title = db.StringField(required=True, max_length=140)
+    description = db.StringField(max_length=200, default='')
     created_at = db.DateTimeField(default=datetime.utcnow)
     updated_at = db.DateTimeField(default=datetime.utcnow)
 
@@ -15,8 +16,3 @@ class Book(db.Document):
 
     def __str__(self):
         return self.title
-
-    @property
-    def _id(self):
-        return str(self.id)
-
