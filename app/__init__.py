@@ -22,6 +22,7 @@ def create_app(test_config=None):
 
     db.init_app(app)
     ma.init_app(app)
+    app.config['BUNDLE_ERRORS'] = True
 
     app.register_blueprint(pages)
     app.register_blueprint(API_BP, url_prefix='/api')

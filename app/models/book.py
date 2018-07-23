@@ -4,8 +4,8 @@ from app.models import db, ma
 
 class Book(db.Document):
     meta = {'collection': 'books'}
-    title = db.StringField(required=True, max_length=140)
-    description = db.StringField(max_length=200, default='')
+    title = db.StringField(required=True, min_length=3, max_length=140, unique=True)
+    description = db.StringField(required=True, max_length=200)
     created_at = db.DateTimeField(default=datetime.utcnow)
     updated_at = db.DateTimeField(default=datetime.utcnow)
 

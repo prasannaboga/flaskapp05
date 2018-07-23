@@ -36,6 +36,9 @@ Covragte
 
 ### TODO List
 
+2018-07-23
+- [ ] Improve mongoengine validation messages
+
 - [ ] mongoDB connections with authentication
 
 - [ ] mongoDB transactions
@@ -63,3 +66,6 @@ https://github.com/miguelgrinberg/flasky
 https://github.com/achiku/sample-flask-sqlalchemy
 
 https://simpleit.rocks/managing-environment-configuration-variables-in-flask-with-dotenv/
+
+Example of how to set up a flask rest api + blueprint + sqlalchemy + marshmallow + unit tests + wsgi -
+https://github.com/viniciuschiele/flask-rest-example
