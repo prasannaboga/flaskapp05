@@ -48,7 +48,7 @@ Covragte
 
 - [ ] api authentication using flask-login
 
--[ ] Using with mongoengine_goodjson problem with pagination
+- [ ] Using with mongoengine_goodjson problem with pagination
 
 ___
 ### Reference Links
