@@ -36,17 +36,17 @@ Covragte
 
 ### TODO List
 
--[ ] mongoDB connections with authentication
+- [ ] mongoDB connections with authentication
 
--[ ] mongoDB transactions
+- [ ] mongoDB transactions
 
--[ ] Write test cases for models
+- [ ] Write test cases for models
 
--[ ] https://github.com/hiroaki-yamamoto/mongoengine-goodjson
+- [ ] https://github.com/hiroaki-yamamoto/mongoengine-goodjson
 
--[ ] https://github.com/marshmallow-code/marshmallow
+- [ ] https://github.com/marshmallow-code/marshmallow
 
--[ ] api authentication using flask-login
+- [ ] api authentication using flask-login
 
 -[ ] Using with mongoengine_goodjson problem with pagination
 
