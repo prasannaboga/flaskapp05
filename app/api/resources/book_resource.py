@@ -1,28 +1,19 @@
 """ Book Resource """
-from flask import request, jsonify
+from flask import request
 from flask_restful import Resource
 from app.models.book import Book, BookSchema
 
-import json
-
 
 class BookResource(Resource):
-    def get(self):
-        page = int(request.args.get('page', 1))
-        per_page = int(request.args.get('per_page', 3))
-        paginated_books = Book.objects.paginate(page=page, per_page=per_page)
-        books = []
-        for _book in paginated_books.items:
-            books.append(json.loads(_book.to_json()))
-        return {'status': 'success', 'data': books}, 200
-
-
-class BookAllResource(Resource):
-    def get(self):
-        books = Book.objects.all()
-        books_schema = BookSchema(many=True)
-        result = books_schema.dump(books)
-        print('line 24')
-        print(books_schema)
-        print(jsonify(books))
-        return {'status': 'success', 'data': jsonify(result.data)}, 200
+    """ Book Resource Class """
+    def get(self, id=None):
+        if id is None:
+            page = int(request.args.get('page', 1))
+            per_page = int(request.args.get('per_page', 3))
+            paginate_books = Book.objects.paginate(page=page, per_page=per_page)
+            books_schema = BookSchema(many=True)
+            return {'status': 'success', 'data': books_schema.dump(paginate_books.items).data}, 200
+        else:
+            book = Book.objects.get(id=id)
+            book_schema = BookSchema()
+            return {'status': 'success', 'data': book_schema.dump(book).data}, 200
