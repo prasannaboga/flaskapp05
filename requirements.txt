@@ -7,6 +7,7 @@ coverage==4.5.1
 dateutils==0.6.6
 Faker==0.8.17
 Flask==1.0.2
+flask-marshmallow==0.9.0
 flask-mongoengine==0.9.5
 Flask-RESTful==0.3.6
 Flask-WTF==0.14.2
@@ -16,6 +17,7 @@ itsdangerous==0.24
 Jinja2==2.10
 lazy-object-proxy==1.3.1
 MarkupSafe==1.0
+marshmallow==2.15.3
 mccabe==0.6.1
 mongoengine==0.15.3
 mongoengine-goodjson==1.1.1

@@ -50,6 +50,8 @@ Covragte
 
 - [ ] Using with mongoengine_goodjson problem with pagination
 
+- [ ] https://realpython.com/introduction-to-mongodb-and-python/
+ 
 ___
 ### Reference Links
 

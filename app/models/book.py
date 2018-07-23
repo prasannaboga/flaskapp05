@@ -1,7 +1,5 @@
 from datetime import datetime
-from app.models import db
-
-import mongoengine_goodjson as gj
+from app.models import db, ma
 
 
 class Book(db.Document):
@@ -15,4 +13,12 @@ class Book(db.Document):
         return '<Book - {}>'.format(self.title)
 
     def __str__(self):
-        return self.title
+        return '{} - {}'.format(self.id, self.title)
+
+
+class BookSchema(ma.Schema):
+
+    class Meta:
+        fields = ('id', 'title', 'description', 'created_at', 'updated_at')
+
+
