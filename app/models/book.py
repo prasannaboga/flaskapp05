@@ -20,5 +20,3 @@ class BookSchema(ma.Schema):
 
     class Meta:
         fields = ('id', 'title', 'description', 'created_at', 'updated_at')
-
-

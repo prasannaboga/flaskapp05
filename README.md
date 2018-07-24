@@ -35,8 +35,13 @@ Covragte
 
 
 ### TODO List
+
+2018-07-25
+- [ ] Application loggers
+- [ ] Model relations
+
 2018-07-24
-- [ ] Implement Token based authentication.
+- [x] Implement Token based authentication.**
 
 2018-07-23
 - [ ] Improve mongoengine validation messages

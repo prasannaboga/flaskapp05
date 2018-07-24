@@ -14,6 +14,7 @@ parser.add_argument('description', type=str, help='Some description about book')
 
 class BookResource(Resource):
     """ Book Resource Class """
+    decorators = [auth.login_required]
 
     def get(self, id):
         book = Book.objects.get(id=id)
