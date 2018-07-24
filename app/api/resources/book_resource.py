@@ -12,19 +12,19 @@ parser.add_argument('title', type=str, help='Cannot be blank')
 parser.add_argument('description', type=str, help='Some description about book')
 
 
-# class BookResource(Resource):
-#     """ Book Resource Class """
-#
-#     def get(self, id):
-#         book = Book.objects.get(id=id)
-#         book_schema = BookSchema()
-#         return {'status': 'success', 'data': book_schema.dump(book).data}, 200
-#
-#     def put(self, id):
-#         pass
-#
-#     def delete(self, id):
-#         pass
+class BookResource(Resource):
+    """ Book Resource Class """
+
+    def get(self, id):
+        book = Book.objects.get(id=id)
+        book_schema = BookSchema()
+        return {'status': 'success', 'data': book_schema.dump(book).data}, 200
+
+    def put(self, id):
+        pass
+
+    def delete(self, id):
+        pass
 
 
 class BooksResource(Resource):
