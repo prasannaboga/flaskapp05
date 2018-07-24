@@ -1,13 +1,52 @@
 """ Book Resource """
-from flask import jsonify
-from flask_restful import Resource
-from app.models.book import Book
-
-import json
+from flask import request
+from flask_restful import Resource, reqparse
+from mongoengine import ValidationError, NotUniqueError
+from app.models.book import Book, BookSchema
 
 
 class BookResource(Resource):
-    def get(self):
-        # books = Book.objects.paginate(page=1, per_page=2)
-        books = Book.objects.all()
-        return {'status': 'success', 'data': json.loads(books.to_json())}, 200
+    """ Book Resource Class """
+
+    def __init__(self):
+        pass
+    parser = reqparse.RequestParser()
+    parser.add_argument('title', type=str, help='Cannot be blank')
+    parser.add_argument('description', type=str, help='Some description about book')
+
+    def get(self, id=None):
+        if id is None:
+            page = int(request.args.get('page', 1))
+            per_page = int(request.args.get('per_page', 3))
+            paginate_books = Book.objects.paginate(page=page, per_page=per_page)
+            books_schema = BookSchema(many=True)
+            return {'status': 'success', 'data': books_schema.dump(paginate_books.items).data}, 200
+        else:
+            book = Book.objects.get(id=id)
+            book_schema = BookSchema()
+            return {'status': 'success', 'data': book_schema.dump(book).data}, 200
+
+    def post(self):
+        errors = {}
+        status_code = 201
+
+        data = self.parser.parse_args()
+        book = Book(
+            title=data['title'],
+            description=data['description']
+        )
+
+        try:
+            book.save()
+        except ValidationError as error:
+            status_code = 400
+            errors = error.to_dict()
+        except NotUniqueError:
+            status_code = 400
+            errors = {'book': 'Unique validation error..!'}
+
+        if book.id is None:
+            return {'status': 'failed', 'errors': errors}, status_code
+        else:
+            book_schema = BookSchema()
+            return {'status': 'success', 'data': book_schema.dump(book).data}, 201

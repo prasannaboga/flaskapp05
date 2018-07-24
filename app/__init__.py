@@ -2,7 +2,7 @@
 
 from flask import Flask
 from app.api import API_BP
-from app.models import db
+from app.models import db, ma
 from app.pages.views import pages
 
 
@@ -21,6 +21,9 @@ def create_app(test_config=None):
     }
 
     db.init_app(app)
+    ma.init_app(app)
+    app.config['BUNDLE_ERRORS'] = True
+
     app.register_blueprint(pages)
     app.register_blueprint(API_BP, url_prefix='/api')
 

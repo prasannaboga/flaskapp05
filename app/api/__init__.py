@@ -8,7 +8,7 @@ API_BP = Blueprint('api', __name__)
 API = Api(API_BP)
 
 API.add_resource(ConfigResource, '/config')
-API.add_resource(BookResource, '/books')
+API.add_resource(BookResource, '/books', '/books/<id>')
 
 
 @API_BP.route('')

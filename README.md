@@ -36,12 +36,25 @@ Covragte
 
 ### TODO List
 
--[ ] mongoDB connections with authentication
--[ ] mongoDB transactions
--[ ] Write test cases for models
--[ ] https://github.com/hiroaki-yamamoto/mongoengine-goodjson
--[ ] https://github.com/marshmallow-code/marshmallow
+2018-07-23
+- [ ] Improve mongoengine validation messages
 
+- [ ] mongoDB connections with authentication
+
+- [ ] mongoDB transactions
+
+- [ ] Write test cases for models
+
+- [ ] https://github.com/hiroaki-yamamoto/mongoengine-goodjson
+
+- [ ] https://github.com/marshmallow-code/marshmallow
+
+- [ ] api authentication using flask-login
+
+- [ ] Using with mongoengine_goodjson problem with pagination
+
+- [ ] https://realpython.com/introduction-to-mongodb-and-python/
+ 
 ___
 ### Reference Links
 
@@ -53,3 +66,6 @@ https://github.com/miguelgrinberg/flasky
 https://github.com/achiku/sample-flask-sqlalchemy
 
 https://simpleit.rocks/managing-environment-configuration-variables-in-flask-with-dotenv/
+
+Example of how to set up a flask rest api + blueprint + sqlalchemy + marshmallow + unit tests + wsgi -
+https://github.com/viniciuschiele/flask-rest-example
