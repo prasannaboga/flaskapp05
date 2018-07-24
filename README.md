@@ -35,6 +35,8 @@ Covragte
 
 
 ### TODO List
+2018-07-24
+- [ ] Implement Token based authentication.
 
 2018-07-23
 - [ ] Improve mongoengine validation messages

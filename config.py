@@ -12,6 +12,7 @@ load_dotenv(dotenv_path)
 
 MONGODB_HOST_URI = os.environ['MONGODB_HOST_URI']
 MONGODB_DATABASE = os.environ['MONGODB_DATABASE']
+SECRET_KEY = os.environ['SECRET_KEY']
 SOMETHING = os.getenv('SOMETHING')
 THREE = os.environ['THREE']
 
