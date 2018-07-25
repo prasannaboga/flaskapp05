@@ -1,4 +1,5 @@
 from flask import Blueprint, g, jsonify, make_response
+from flask import current_app as app
 from flask_restful import Api
 
 from app.api.resources.config_resource import ConfigResource
@@ -16,6 +17,11 @@ API.add_resource(BookResource, '/books/<id>')
 
 @API_BP.route('')
 def index():
+    # Testing logging levels
+    app.logger.warning('I AM WARNING***')
+    app.logger.debug('I AM DEBUG***')
+    app.logger.error('I AM ERROR***')
+    app.logger.info('I AM INFO***')
     return jsonify({'status': 'ok'})
 
 

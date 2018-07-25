@@ -37,7 +37,7 @@ Covragte
 ### TODO List
 
 2018-07-25
-- [ ] Application loggers
+- [ ] Application loggers - https://www.packetmischief.ca/2017/10/25/3-ways-to-fail-at-logging-with-flask/
 - [ ] Model relations
 
 2018-07-24
