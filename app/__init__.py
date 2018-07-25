@@ -7,6 +7,7 @@ from app.pages.views import pages
 
 import logging
 import logging.handlers
+import time
 
 def create_app(test_config=None):
     """ init app """
@@ -29,12 +30,17 @@ def create_app(test_config=None):
     app.config['BUNDLE_ERRORS'] = True
 
     # logging
-    handler = logging.handlers.RotatingFileHandler(
+    handler = logging.handlers.TimedRotatingFileHandler(
         'logs/{}.log'.format(app.config['ENV']),
-        maxBytes=1024*1024,
-        backupCount=20
+        backupCount=10,
+        when='midnight',
+        interval=1
+    )
+    log_message_formatter = logging.Formatter(
+        '[%(asctime)s] %(levelname)-8s {%(filename)s:%(lineno)d} - %(message)s'
     )
     handler.setLevel(app.config['LOGGER_LEVEL'])
+    handler.setFormatter(log_message_formatter)
     app.logger.addHandler(handler)
 
     # register blueprints
