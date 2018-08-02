@@ -8,8 +8,10 @@ from app import create_app
 @pytest.fixture
 def app():
     app = create_app({
-        'TESTING': False,
-        'ENV': 'testing'
+        'TESTING': True,
+        'ENV': 'testing',
+        'MONGODB_HOST_URI': 'mongodb://localhost:27017/flaskapp05_development',
+        'LOGGER_LEVEL': 10
     })
 
     ctx = app.app_context()

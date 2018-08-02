@@ -5,7 +5,12 @@ import json
 
 def test_config():
     assert not create_app().testing
-    assert create_app({'TESTING': True}).testing
+    assert create_app({
+        'TESTING': True,
+        'ENV': 'testing',
+        'MONGODB_HOST_URI': 'mongodb://localhost:27017/flaskapp05_development',
+        'LOGGER_LEVEL': 10
+    }).testing
 
 
 def test_pages(client):
